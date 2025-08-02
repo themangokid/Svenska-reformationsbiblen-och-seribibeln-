@@ -25,8 +25,11 @@
     citecolor=titlecolor
 ]{hyperref}
 
-% -- DEV AREA --
 
+
+% \input{preamble}
+
+% -- DEV AREA --
 \newcommand{\outlineonlysection}[1]{%
   \section*{}% nothing shows in PDF
   \section{#1}% temporarily uncomment to get outline entry
@@ -152,7 +155,7 @@
 % NEW STUFF CAN BE REMOVED.
 % Uncomment this line to enable mobile formatting
 \newif\ifmobilelayout
-\mobilelayouttrue
+\mobilelayoutfalse
 
 \ifmobilelayout
   \geometry{
@@ -181,23 +184,26 @@
 % DOCUMENT START
 % -----------------------
 \begin{document}
+% Website and intro text
+% \input{website_info}
+
+
 % Front-page: GT
 %\subsection*{Front-page: GT}
 \input{front-page/title_text_gamla_testamentet}
 \input{front-page/icons_low_quality}
 \newpage
 
+
 % -- Links to external material --
 % --- TOC Quick Menu ---
 \vspace*{-1em}
 \noindent
 \begin{center}
-\definecolor{verydarkbrown}{RGB}{33, 16, 0} % Even darker brown
-\renewcommand{\labelitemi}{\textcolor{verydarkbrown}{\textbullet}}
 
-{\fontsize{20}{24}\selectfont \color{titlecolor} {\textbf{Länkar}}}\\
-% \textcolor{titlecolor}{\textbf{Länkar}}
-\vspace{0.5em}
+\vspace{5em}
+\section*{Länkar}
+
 \begin{multicols}{2}
 \setlength{\columnseprule}{0pt}
 \setlength{\columnsep}{5pt}
@@ -205,22 +211,21 @@
 
 \raggedright
 \begin{itemize}
-
-  \item \href{https://bibel.se/}{Bibel.se}
-  \item  \href{https://drive.google.com/drive/folders/1N-suLiCB4gOavhUg04P0xGzSDlCSntgo}{Samlat material}
-  \item \href{https://bibel.se/wordpress/index.php/2022/01/18/oversatta-bibelbocker/}{SRB~Bibelböcker}
+  \item \href[pdfnewwindow=true]{https://bibel.se/}{Bibel.se}
+  \item \href[pdfnewwindow=true]{https://drive.google.com/drive/folders/1N-suLiCB4gOavhUg04P0xGzSDlCSntgo}{Samlat material}
+  \item \href[pdfnewwindow=true]{https://bibel.se/wordpress/index.php/2022/01/18/oversatta-bibelbocker/}{SRB~Bibelböcker}
   % -- Next column
-  \item \href{https://seriebibeln.com/kristna-serier}{Seriebibeln}
-  \item \href{https://bibelonline.se/biblereader.php}{Bibelonline}
-  \item \href{https://bibel.se/wordpress/index.php/2022/01/22/bestalla-reformationsbibeln/}{Köp SRB-Bibeln}
-  
+  \item \href[pdfnewwindow=true]{https://bibelonline.se/biblereader.php}{Bibelonline}
+  \item \href[pdfnewwindow=true]{https://bibel.se/wordpress/index.php/2022/01/22/bestalla-reformationsbibeln/}{Köp SRB-Bibeln}
+  \item \href[pdfnewwindow=true]{https://seriebibeln.com/kristna-serier}{Seriebibeln}
+  \item \href[pdfnewwindow=true]{https://www.biblecenter.se/files/Kan_man_lita_pa_Bibel_2000.pdf}{Lita~på~Bibel2K?}
+  \item \href[pdfnewwindow=true]{https://www.youtube.com/@reformationsbibeln9676/videos}{Ljudbibel}
 \end{itemize}
 \end{multicols}
 \end{center}
 \vspace{1em}
 
-
-%\subsection*{Innehållsförteckning}
+\section*{Innehållsförteckning}
 % --- Produce a "nice" table of contents (clickable if using hyperref)
 \renewcommand{\contentsname}{\LARGE }
     \begin{multicols*}{2}
@@ -240,37 +245,10 @@
 \end{multicols*}
 \newpage
 
-%\subsection*{Quick menu}
-% --- TOC Quick Menu ---
-\vspace*{-1em}
-\noindent
-\begin{center}
-\textcolor{titlecolor}{\Large\textbf{Navigationsmeny}}
-\vspace{0.5em}
-
-\begin{multicols}{2}
-\setlength{\columnseprule}{0pt}
-\setlength{\columnsep}{10pt}
-\setlength{\parskip}{4pt}
-
-\begin{itemize}
-  \item \hyperlink{GT}{GT}
-  \item \hyperlink{Matteus 1}{Matteus}
-  \item \hyperlink{Markus 1}{Markus}
-  \item \hyperlink{Lukas 1}{Lukas}
-  \item \hyperlink{Johannes}{Johannes}
-  \item \hyperlink{Apostlagärningarna}{Apostlag.}
-  \item \hyperlink{Romarbrevet}{Romarbrevet}
-  \item \hyperlink{Uppenbarelseboken}{Upp.}
-\end{itemize}
-\end{multicols}
-\end{center}
-
-\vspace{1em}
 
 % GAMLA TESTAMENTET
-%\input{render/GT/Forsta_Moseboken}
-%\input{render/GT/Andra_Moseboken}
+\input{render/GT/Forsta_Moseboken}
+\input{render/GT/Andra_Moseboken}
 
 % NEW PAGE
 \newpage
@@ -314,6 +292,6 @@
     \input{render/NT/judasbrev}
     \input{render/NT/uppenbarelseboken}
 \fi 
-
-
 \end{document}
+
+
